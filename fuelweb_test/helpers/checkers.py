@@ -25,7 +25,7 @@ logwrap = debug(logger)
 def check_ceph_health(ssh):
     # Check Ceph node disk configuration:
     result = None
-    for attempt in range(6):
+    for attempt in range(1, 6):
         try:
             disks = ''.join(ssh.execute(
                 'ceph osd tree | grep osd')['stdout'])
