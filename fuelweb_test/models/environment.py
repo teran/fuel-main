@@ -17,6 +17,7 @@ import time
 import logging
 from ipaddr import IPNetwork
 import time
+import traceback
 
 from paramiko import RSAKey
 
@@ -310,6 +311,7 @@ class EnvironmentModel(object):
                         node.get_ip_address_by_network_name(self.admin_net)))
                 except Exception, e:
                     logging.warn('Exception got: %s' % e)
+                    traceback.print_exc()
             return True
         return False
 
