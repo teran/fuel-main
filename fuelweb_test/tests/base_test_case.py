@@ -18,7 +18,7 @@ from devops.helpers.helpers import SSHClient
 from proboscis import test, SkipTest
 
 from fuelweb_test.models.environment import EnvironmentModel
-from fuelweb_test.helpers.decorators import debug
+from fuelweb_test.helpers.decorators import debug, upload_manifests
 from fuelweb_test.settings import *
 
 logging.basicConfig(
@@ -66,6 +66,13 @@ class SetupEnvironment(TestBasic):
         self.check_run("empty")
         self.env.setup_environment()
         self.env.make_snapshot("empty")
+        self.admin_node_ip = self.env.get_admin_node_ip()
+
+    @test(depends_on=[setup_master],
+          groups=["setup_with_manifests"])
+    @upload_manifests
+    def setup_master_with_manifests(self):
+        pass
 
     @test(depends_on=[setup_master])
     def prepare_release(self):
