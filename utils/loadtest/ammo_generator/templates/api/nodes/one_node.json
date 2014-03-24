@@ -1,0 +1,119 @@
+{
+  "is_agent": true,
+  "ip": {{ ammo_generator.random_ip }},
+  "manufacturer": "Supermicro",
+  "platform_name": "X9SCD",
+  "status": "discover",
+  "mac": {{ ammo_generator.primary_mac }},
+  "meta":{
+    "interfaces": [
+{% for i in interfaces %}
+{{ i }}
+{% endfor %}
+    ],
+    "disks": [
+      {
+        "removable": "0",
+        "extra": [
+          "disk/by-id/wwn-0x5000c500503adb76",
+          "disk/by-id/scsi-SATA_ST500NM0011_Z1M1C618",
+          "disk/by-id/ata-ST500NM0011_Z1M1C618"
+        ],
+        "model": "ST500NM0011",
+        "size": 500107862016,
+        "name": "sdb",
+        "disk": "disk/by-path/pci-0000:00:1f.2-scsi-0:0:0:0"
+      },
+      {
+        "removable": "0",
+        "extra": [
+          "disk/by-id/wwn-0x5000c500503b5287",
+          "disk/by-id/scsi-SATA_ST500NM0011_Z1M1C3VW",
+          "disk/by-id/ata-ST500NM0011_Z1M1C3VW"
+        ],
+        "model": "ST500NM0011",
+        "size": 500107862016,
+        "name": "sda",
+        "disk": "sda"
+      }
+    ],
+    "memory":{
+      "devices":[
+        {
+          "type": "DDR3",
+          "frequency": 1600,
+          "size": 4294967296
+        },
+        {
+          "type": "DDR3",
+          "frequency": 1600,
+          "size": 4294967296
+        },
+        {
+          "type": "DDR3",
+          "frequency": 1600,
+          "size": 4294967296
+        },
+        {
+          "type": "DDR3",
+          "frequency": 1600,
+          "size": 4294967296
+        },
+        {
+          "type": "Flash",
+          "size": 8388608
+        }
+      ],
+      "maximum_capacity": 34359738368,
+      "slots": 4,
+      "total": 17188257792
+    },
+    "cpu":{
+      "real": 1,
+      "spec": [
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        },
+        {
+          "frequency": 3501,
+          "model": "Intel(R) Xeon(R) CPU E3-1270 V2 @ 3.50GHz"
+        }
+      ],
+      "total": 8
+    },
+    "system": {
+      "family": "To be filled by O.E.M.",
+      "manufacturer": "Supermicro",
+      "product": "X9SCD",
+      "serial": "0123456789",
+      "version": "0123456789",
+      "fqdn": "node-3"
+    }
+  },
+  "os_platform": "ubuntu"
+}
